@@ -34,7 +34,7 @@ public class ApplicationConfiguration {
     }
 
     @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(DataSource dataSource)   {
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource)   {
         //door deze te gebruiken hebben we geen persistence.xml nodig
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource);
