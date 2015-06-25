@@ -3,6 +3,7 @@ package be.vdab.films;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
@@ -19,6 +20,7 @@ import java.sql.DriverManager;
 
 @Configuration
 @ComponentScan("be.vdab")
+@EnableJpaRepositories
 public class ApplicationConfiguration {
 
     @Bean
@@ -39,6 +41,8 @@ public class ApplicationConfiguration {
         entityManagerFactoryBean.setPackagesToScan("be.vdab");
         HibernateJpaVendorAdapter jpaVendorAdapter = new HibernateJpaVendorAdapter();
         jpaVendorAdapter.setDatabase(Database.MYSQL);
+
+        //create-drop functies die vroeger in de persistence.xml stonden
         jpaVendorAdapter.setGenerateDdl(true);
         jpaVendorAdapter.setShowSql(true);
         entityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
