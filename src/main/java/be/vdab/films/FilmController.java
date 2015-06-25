@@ -12,9 +12,8 @@ public class FilmController {
 
 
     @RequestMapping("/hello")
-    @ResponseBody
     public String hello()  {
-        return "Hello World";
+        return "home";
     }
 
 
