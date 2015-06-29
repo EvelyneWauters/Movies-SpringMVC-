@@ -10,6 +10,11 @@
 <html>
 <head>
     <title>Films</title>
+    <style>a{border-radius: 25px;
+        background: #8AC007;
+        padding: 20px;
+        width: 200px;
+        height: 150px; }</style>
 </head>
 
 
@@ -37,6 +42,8 @@
       </c:otherwise>
   </c:choose>
 
+  <a href="/hello">Take me all the way home</a>
+  <a href="/form">Add a film</a>
 
 </body>
 </html>

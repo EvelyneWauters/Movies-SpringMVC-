@@ -14,11 +14,18 @@ public class Film {
 
     private String title;
 
-    public Film() {
+    private String urlImage;
+
+
+
+
+
+    public Film(String title, String urlImage) {
+        this.title = title;
+        this.urlImage = urlImage;
     }
 
-    public Film(String title) {
-        this.title = title;
+    public Film() {
     }
 
     public Integer getId() {
@@ -31,6 +38,14 @@ public class Film {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
     }
 
     @Override
