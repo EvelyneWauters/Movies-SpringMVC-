@@ -35,16 +35,18 @@
 
     <c:forEach var="film" items="${film}">
       <tr>
-        <td>${film.id}</td>
-        <td>${film.title}</td>
+        <td><a href="/details?id=${film.id}">${film.id}</a></td>
+        <td><a href="/details?id=${film.id}">${film.title}</a></td>
+        <td><a href="/form?id=${film.id}">edit</a></td>
+        <td><a href="/list">delete</a></td>
       </tr>
     </c:forEach>
     </table>
       </c:otherwise>
   </c:choose>
 
-  <a href="/hello" class="btn btn-primary">Take me all the way home</a>
-  <a href="/form" class="btn btn-default">Add a film</a>
+  <a href="/form" class="btn btn-primary">Add a film</a>
+  <a href="/hello" class="btn btn-default">Take me all the way home</a>
 </div>
 </body>
 </html>

@@ -50,7 +50,7 @@ public class FilmController {
     }
 
     @RequestMapping(value="/form", method = RequestMethod.GET)
-    public String form(Map<String, Object> model, @RequestParam("id") Integer filmId)    {
+    public String form(Map<String, Object> model, @RequestParam(value = "id",required = false) Integer filmId)    {
         if(filmId!=null)    {
             model.put("film", filmRepository.findFilmById(filmId));
         } else {
@@ -66,5 +66,10 @@ public class FilmController {
         return "redirect:/films";
     }
 
+    @RequestMapping(value= "/films", method=RequestMethod.POST)
+    public String delete(Film film) {
+        filmRepository.delete(film);
+        return"redirect:/films";
+    }
 
 }
