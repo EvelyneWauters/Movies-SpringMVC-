@@ -9,15 +9,10 @@
 <html>
 <head>
     <title>Film by ID</title>
-  <style>h1{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-              color: darkgray;
-              padding-left: 2rem;
-              background: url(${film.urlImage});}
-            a{border-radius: 25px;
-                background: #8AC007;
-                padding: 20px;
-                width: 200px;
-                height: 150px; }</style>
+    <!-- Add Bootstrap! -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
 

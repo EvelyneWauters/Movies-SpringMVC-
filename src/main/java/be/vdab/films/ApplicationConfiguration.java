@@ -45,7 +45,7 @@ public class ApplicationConfiguration {
         jpaVendorAdapter.setDatabase(Database.MYSQL);
 
         //create-drop functies die vroeger in de persistence.xml stonden
-        jpaVendorAdapter.setGenerateDdl(true);
+        jpaVendorAdapter.setGenerateDdl(false);
         //entityManagerFactoryBean.setJpaPropertyMap();
         jpaVendorAdapter.setShowSql(true);
         entityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);

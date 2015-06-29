@@ -2,6 +2,7 @@ package be.vdab.films;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,6 +34,7 @@ public class FilmController {
     @RequestMapping("/filmsbyID")
     @ResponseBody
     public String filmsbyID()   {
+
         return filmRepository.findFilmById(2).toString();
     }
 
@@ -56,8 +58,13 @@ public class FilmController {
         return "film/details";
     }
 
-    @RequestMapping("/form")
-    public String form()    {
+    @RequestMapping(value="/form", method = RequestMethod.GET)
+    public String form(Map<String, Object> model, @RequestParam("id") Integer filmId)    {
+        if(filmId!=null)    {
+            model.put("film", filmRepository.findFilmById(filmId));
+        } else {
+            model.put("film", new Film());
+        }
         return "film/form";
     }
 
@@ -85,7 +92,6 @@ public class FilmController {
         filmRepository.save(film);
         return "redirect:/films";
     }
-
 
 
 }
