@@ -41,12 +41,5 @@
 
 </div>
 
-
-<%--Zoals we het vroeger gedaan hadden: --%>
-  <%--<form action="create" method="post">--%>
-    <%--<div>Title: <input type="text" name = "title"/></div>--%>
-    <%--<div>ImageURL: <input type="text" name = "title"/></div>--%>
-    <%--<input type="submit" value="Voeg een film toe"/>--%>
-  <%--</form>--%>
 </body>
 </html>
